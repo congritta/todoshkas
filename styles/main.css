@@ -1,0 +1,156 @@
+@import "./inputs.css";
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  background: dodgerblue;
+  font: 1em sans-serif;
+}
+
+/* Main container */
+
+.main-container {
+  width: 100%;
+  max-width: 940px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/* New todoshka pane */
+
+.new-todoshka-pane {
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.new-todoshka-pane > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-todoshka-pane > form > .main-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.new-todoshka-pane > form > .main-inputs > input {
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.new-todoshka-pane > form > #hidableInputs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  transition: .32s;
+  padding: 10px 0;
+}
+
+.new-todoshka-pane > form > #hidableInputs > textarea {
+  width: auto;
+  flex: 1;
+}
+
+.new-todoshka-pane > form > #hidableInputs > .due-date-time-inputs {
+  padding: 10px 15px;
+}
+
+.new-todoshka-pane > form > #hidableInputs > .due-date-time-inputs > input[type="date"],
+.new-todoshka-pane > form > #hidableInputs > .due-date-time-inputs > input[type="time"] {
+  padding: 0
+}
+
+.new-todoshka-pane > form > #hidableInputs._hidden {
+  height: 0 !important;
+  overflow: hidden;
+  padding: 0;
+}
+
+.new-todoshka-pane > form > .main-inputs > button {
+  width: auto;
+}
+
+/* Todoshkas list */
+
+#todoshkasList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+#todoshkasList > .todoshka {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  animation: reveal .21s 1 linear;
+  transition: .21s;
+}
+
+#todoshkasList > .todoshka._removing {
+  opacity: 0;
+  transform: scale(.9);
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+#todoshkasList > .todoshka > input,
+#todoshkasList > .todoshka > textarea {
+  padding: 0;
+}
+
+#todoshkasList > .todoshka > .name {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+#todoshkasList > .todoshka > .description {
+  font-size: 11pt;
+  margin-top: 5px;
+  color: #666;
+}
+
+#todoshkasList > .todoshka > .param {
+  margin-top: 10px;
+  font-size: 9pt;
+  color: #888
+}
+
+#todoshkasList > .todoshka > .action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#todoshkasList > .todoshka > .action-buttons > button {
+  background: transparent;
+  padding: 0;
+  color: #000;
+  font-weight: normal;
+  font-size: 9pt;
+  width: auto;
+}
+
+#todoshkasList > .todoshka > .action-buttons > button:hover {
+  text-decoration: underline;
+}

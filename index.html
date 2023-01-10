@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Todoshkas</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    >
+    <link href="styles/main.css" rel="stylesheet">
+    <script src="scripts/main.js" type="module"></script>
+  </head>
+  <body>
+    <div class="main-container">
+
+      <div class="new-todoshka-pane">
+        <form id="newTodoshkaForm">
+          <div class="main-inputs">
+            <input id="newTodoshkaNameInput" name="name" placeholder="Todo..." type="text">
+            <button>
+              Add
+            </button>
+          </div>
+          <div class="_hidden" id="hidableInputs">
+            <textarea id="newTodoshkaDescriptionInput" name="description" placeholder="Task description..."></textarea>
+            <div class="due-date-time-inputs">
+              <input id="newTodoshkaDueDateInput" name="dueDate" type="date">
+              <input id="newTodoshkaDueTimeInput" name="dueTime" type="time">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="todoshkasList"></div>
+    </div>
+  </body>
+</html>
